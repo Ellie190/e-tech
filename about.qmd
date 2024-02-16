@@ -1,0 +1,32 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: trestles
+  links:
+    - icon: person-badge
+      text: Portfolio
+      href: https://eli-nimy.netlify.app
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/eli-nimy-a752a1191/
+    - icon: github
+      text: Github
+      href: https://github.com/Ellie190
+---
+
+**Friendly neighborhood** Data Scientist documenting and sharing his learning journey.
+
+### Blog Topics
+
+-   Data Science
+
+-   Data Visualisation
+
+-   Data Engineering
+
+-   Cloud Computing
+
+-   Web Applications
+
+-   Data Applications

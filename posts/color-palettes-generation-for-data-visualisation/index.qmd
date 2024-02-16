@@ -1,0 +1,83 @@
+---
+title: "Color Palette Generation and Previewing for Charts and Dashboards"
+description: "Explore methods for choosing colors and color palettes for data visualization. Uncover tools to visualize how these selections will appear in charts and dashboards without the need to create them firsthand."
+author: "Eli Nimy"
+date: "2024-02-14"
+categories: [data visualisation, dashboard]
+image: "color-palette-for-dv.jpg"
+format: 
+  html:
+    toc: true
+---
+
+::: callout-note
+I recommend reading this post in dark mode if the example images are too intense for your eyes in light mode. To switch modes, click the toggle button in the top right corner, located to the left of the search icon.
+:::
+
+### Definitions
+
+-   **Color Palette**: A predefined set of colors used to represent different data categories or values in charts, graphs, or other visualizations.
+
+-   **Hex color:** A color expressed as a six-digit combination of numbers and letters defined by its mix of red, green and blue (RGB).
+
+The reminder of this post goes through the resources I use for color palette generation and viewing for charts and dashboards.
+
+### Google Color Picker
+
+When selecting colors for data visualization, websites, or dashboard themes, I often rely on the Google Color Picker tool. It's an excellent resource that allows you to choose colors tailored to your specific use-case. Since the colors are a mix of RGB (Red, Green, Blue), there are a staggering 16,777,216 possible combinations available. This is because each RGB parameter can have a value between 0 and 255, resulting in a total of 256 x 256 x 256 possible colors.
+
+To access the Google Color Picker, simply open Chrome and search for **"color picker"**.
+
+![](color-picker.png)
+
+### Data Color Picker
+
+[Data color picker](https://www.learnui.design/tools/data-color-picker.html) is a versatile tool designed to assist in generating color palettes, single hue scales, and divergent color scales. Additionally, it provides visual previews of these color schemes in context, along with guidance on their application for data visualization.
+
+The images below show the different color generation options and how they look in context.
+
+::: {layout-nrow="3"}
+![Palette Generator](palette-generator.png){width="60%"}
+
+![Palette Generator in Context](palette-generator-in-context.png){width="40%"}
+
+![Single Hue Scale](single-hue-scale.png){width="60%"}
+
+![Single Hue scale in Context](single-hue-scale-in-context.png){width="40%"}
+
+![Divergent Color Scale](divergent-color-scale.png){width="60%"}
+
+![Divergent Color Scale in Context](divergent-color-scale-in-context.png){width="40%"}
+:::
+
+<br>
+
+### Coolors
+
+[Coolors](https://coolors.co/palettes/popular) is a color palette generator and platform where you can explore popular and trending color schemes. It provides inspiration for creating your own palettes through a range of customization options. With Coolors, you can easily discover, experiment, and craft unique color combinations to suit your design needs.
+
+![](coolors.png)
+
+<br>
+
+### Dashboard Color Checker
+
+The [dashboard color checker](https://bit.ly/DashboardColorChecker) serves as a great tool for previewing how a dashboard will look with different color palettes. It provides the option to copy the URL of the color palettes generated in Coolors.
+
+![](dashboard-color-checker.png)
+
+### Link to All Resources
+
+-   [Google Color Picker](https://www.google.com/search?q=color+picker)
+
+-   [Data Color Picker](https://www.learnui.design/tools/data-color-picker.html)
+
+-   [Coolors](https://coolors.co/)
+
+-   [Dashboard Color Checker](https://bit.ly/DashboardColorChecker)
+
+::: {.callout-note appearance="simple"}
+## Thank you for following along
+
+Your friendly neighborhood data scientist
+:::

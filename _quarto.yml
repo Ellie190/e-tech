@@ -1,0 +1,28 @@
+project:
+  type: website
+
+website:
+  title: "E-tech Blog"
+  favicon: et_logo.jpg
+  navbar:
+    logo: et_logo.jpg
+    left:
+      - research.qmd
+      - about.qmd
+    right:
+      - icon: github
+        href: https://github.com/Ellie190
+      - icon: linkedin
+        href: https://www.linkedin.com/in/eli-nimy-a752a1191/
+      - icon: person-badge
+        href: https://eli-nimy.netlify.app
+  page-footer:
+    left: "© Copyright 2024, Eli Nimy"
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+
+editor: visual
+

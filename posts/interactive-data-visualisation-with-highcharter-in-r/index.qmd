@@ -1,0 +1,573 @@
+---
+title: "Interactive Data Visualisation with Highcharter in R"
+description: "learn how to create common interactive and customizable data visualizations using Highcharts"
+author: "Eli Nimy"
+date: "2024-02-14"
+categories: [data visualisation, data analysis, r, code]
+image: "interactive-dv-in-r-highcharter.jpg"
+format: 
+  html:
+    toc: true
+---
+
+Data visualization is a powerful tool that enables us to communicate complex information effectively and intuitively. In today's data-driven world, where vast amounts of information are generated daily, the ability to create meaningful visual representations of data is essential for analysis, exploration, and decision-making. Among the plethora of tools available for data visualization, Highcharter stands out as a versatile and user-friendly option for creating interactive visualizations within the R programming environment.
+
+In this blog post, we'll explore how Highcharter can be leveraged to create interactive and engaging visualizations in R.
+
+### Install and load Packages
+
+Before moving any further with this post, you will need to install and load three libraries: tidyverse, highcharter, and xts.
+
+-   [Tidyverse](https://www.tidyverse.org/) - is a collection of [R packages](https://www.tidyverse.org/packages/) designed for data science and statistical analysis. It provides a coherent and consistent framework for working with data by promoting a tidy data structure and emphasizing a grammar of data manipulation. The tidyverse includes packages such as dplyr for data manipulation, ggplot2 for data visualization, tidyr for data tidying, readr for data import, and several others.
+
+-   [Highcharter](https://jkunst.com/highcharter/index.html) - The highcharter package provides an interface to the [Highcharts](https://www.highcharts.com/) JavaScript library, allowing R users to create a wide variety of charts, including line charts, bar charts, scatter plots, heatmaps, and more, with interactive features such as zooming, tooltips, and drill-down capabilities.
+
+-   [Xts](https://joshuaulrich.github.io/xts/) - **eXtensible Time Series** is an R package designed for handling time series data. It provides an extensible framework for creating, manipulating, and analyzing time series objects in R.
+
+Install CRAN version:
+
+``` markdown
+install.packages("tidyverse")
+```
+
+``` markdown
+install.packages("highcharter")
+```
+
+``` markdown
+install.packages("xts")
+```
+
+Load packages:
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+library(tidyverse) 
+library(highcharter)
+library(xts)
+```
+
+### Datasets
+
+The R package datasets will be used to create bar, pie, scatter, and line charts using highcharter.
+
+::: panel-tabset
+## mpg
+
+**mpg** is a ggplot2 dataset that contains a subset of the fuel economy data that the EPA makes available on <https://fueleconomy.gov/>. It contains only models which had a new release every year between 1999 and 2008 - this was used as a proxy for the popularity of the car.
+
+::: {.callout-caution collapse="true"}
+## Expand To Learn More About the mpg Dataset
+
+**Format** - A data frame with 234 rows and 11 variables:
+
+-   `manufacturer` - manufacturer name
+-   `model` - model name
+-   `displ` - engine displacement, in litres
+-   `year` - year of manufacture
+-   `cyl` - number of cylinders
+-   `trans` - type of transmission
+-   `drv` - the type of drive train, where f = front-wheel drive, r = rear wheel drive, 4 = 4wd
+-   `cty` - city miles per gallon
+-   `hwy` - highway miles per gallon
+-   `fl` - fuel type
+-   `class` - "type" of car
+
+**View mpg dataset**
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+
+mpg
+```
+:::
+
+## globaltemp
+
+**globaltemp** is a highcharter dataset that contains temperature information by years, sourced by the [climate lab book](https://www.climate-lab-book.ac.uk/2016/spiralling-global-temperatures/).
+
+::: {.callout-caution collapse="true"}
+## Expand To Learn More About the globaltemp Dataset
+
+**Format** - A data frame with 1992 observations and 4 variables.
+
+-   `date`- date
+-   `lower` - minimum temperature
+-   `median` - median temperature
+-   `upper` - maximum temperature
+
+**View globaltemp dataset**
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+
+globaltemp
+```
+:::
+
+## vaccines
+
+**vaccines** is a highcharter dataset that contains the number of infected people by Measles, measured over 70-some years and across all 50 states. From the WSJ analysis: <http://graphics.wsj.com/infectious-diseases-and-vaccines/>
+
+::: {.callout-caution collapse="true"}
+## Expand To Learn More About the vaccines Dataset
+
+**Format** - A data frame with 3,876 observations and 3 variables.
+
+-   `year`- year
+-   `state` - name of the state
+-   `count` - number of cases per 100,000 people. If the value is NA the count was 0
+
+**View vaccines dataset**
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+
+vaccines
+```
+:::
+:::
+
+### Highcharter Functions
+
+::: {.callout-note collapse="true"}
+## Expand To Learn More About the Highcharter Functions used in this Post
+
+**`hchart():`**
+
+-   This function is used to create a highchart object directly from a data frame or other R objects.
+
+-   It simplifies the process of creating charts by automatically inferring the chart type and mapping data variables to visual properties.
+
+**`hcaes():`**
+
+-   This function specifies the aesthetics mappings for the chart.
+
+-   It maps data variables to visual properties of the chart, such as x-axis, y-axis, color, size, etc.
+
+**`hc_xAxis()`** and **`hc_yAxis():`**
+
+-   These functions configure the x-axis and y-axis of the chart, respectively.
+
+-   They allow customization of axis titles, labels, tick marks, and other properties.
+
+**`hc_title():`**
+
+-   This function sets the title of the chart.
+
+-   It allows customization of the main title displayed above the chart.
+
+**`hc_exporting():`**
+
+-   his function enables exporting functionality for the chart.
+
+-   It allows users to download the chart as a png, jpeg, pdf, svg, vector, csv, and xls etc.
+
+**`hc_add_theme():`**
+
+-   This function applies a theme to the chart.
+
+-   It allows customization of chart appearance, such as colors, fonts, and backgrounds.
+
+**`hc_legend():`**
+
+-   This function configures the appearance and position of the chart legend.
+
+-   It allows customization of legend title, labels, alignment, and other properties.
+
+**`hc_colors():`**
+
+-   This function sets a custom color palette for the chart.
+
+-   It allows specifying a vector of colors to be used for different data series, points, or other visual elements.
+:::
+
+### Highcharter Parameters
+
+::: {.callout-note collapse="true"}
+## Expand To Learn More About the Highcharter Parameters used in this Post
+
+**`type:`**
+
+-   This parameter specifies the type of chart to be created, such as "line", "bar", "scatter", etc.
+
+**`color:`**
+
+-   This parameter sets the color of data series, points, or other visual elements in the chart.
+
+**`dataLabels:`**
+
+-   This parameter controls the display of data labels on the chart.
+
+-   It allows customization of the format, position, and appearance of data labels.
+
+**`name:`**
+
+-   This parameter sets the name or label of a data series in the chart legend.
+
+**`enabled:`**
+
+-   This parameter specifies whether a particular feature, such as data labels or exporting functionality, is enabled or disabled.
+
+**`format:`**
+
+-   This parameter specifies the format of data labels or other text elements in the chart.
+
+**`showInLegend:`**
+
+-   This parameter specifies whether a data series or point should be displayed in the chart legend.
+
+-   It can be set to **`TRUE`** or **`FALSE`** to control visibility in the legend.
+
+**`backgroundColor:`**
+
+-   This parameter sets the background color of the chart or specific chart elements.
+
+-   It accepts color values in various formats, such as hexadecimal codes or named colors.
+
+**`text:`**
+
+-   This parameter sets the text content for various chart elements, such as titles, labels, or tooltips.
+
+-   It allows customization of text appearance, formatting, and positioning.
+
+**`group:`**
+
+-   This parameter is used in conjunction with **`hcaes()`** to group data points for various purposes, such as creating facets or subsets within the chart.
+
+-   It allows grouping data points based on a categorical variable, which can be useful for creating multiple series, facets, or subsets within the chart.
+:::
+
+### Bar Charts
+
+Bar charts are used to compare categorical data or to track changes over time.
+
+::: panel-tabset
+## Bar Chart
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+mpg |>  
+  group_by(class) |>  
+  summarise(number_of_cars = n()) |> 
+  arrange(desc(number_of_cars)) |>  
+  hchart("bar", hcaes(x = class, y = number_of_cars),
+         color = "#5c6f7e",
+         dataLabels = list(enabled = TRUE, format = "{y}"),
+         name = "Number of cars") |> 
+  hc_xAxis(title = list(text = "Car type")) |>  
+  hc_yAxis(title = list(text = "Number of cars"),
+           labels = list(format = "{value}")) |> 
+  hc_title(text = list("Distribution of Car Types")) |>  
+  hc_exporting(enabled = TRUE) |> 
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+
+## Column Chart
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+mpg |>  
+  group_by(class) |> 
+  summarise(number_of_cars = n()) |> 
+  arrange(desc(number_of_cars)) |> 
+  hchart("column", hcaes(x = class, y = number_of_cars),
+         color = "#5c6f7e",
+         dataLabels = list(enabled = TRUE, format = "{y}"),
+         name = "Number of cars") |> 
+  hc_xAxis(title = list(text = "Car type")) |>  
+  hc_yAxis(title = list(text = "Number of cars"),
+           labels = list(format = "{value}")) |>  
+  hc_title(text = list("Distribution of Car Types")) |>  
+  hc_exporting(enabled = TRUE) |> 
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+
+## Grouped Column Chart
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+mpg |>  
+  group_by(class, drv)  |>  
+  summarise(number_of_cars = n())  |>  
+  arrange(desc(number_of_cars))  |>  
+  hchart("column", hcaes(x = class, y = number_of_cars, group= drv),
+         dataLabels = list(enabled = TRUE, format = "{y}"))  |>  
+  hc_xAxis(title = list(text = "Car type"))  |>  
+  hc_yAxis(title = list(text = "Number of Cars"),
+           labels = list(format = "{value}"))  |>  
+  hc_title(text = list("Distribution of Car Types by Drive Train"))  |>  
+  hc_legend(title = list(text = "Type of Drive Train")) |>
+  hc_exporting(enabled = TRUE)  |> 
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+
+## Stacked Column Chart
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+mpg  |>  
+  group_by(class, drv)  |>  
+  summarise(number_of_cars = n()) |>  
+  arrange(desc(number_of_cars))  |>  
+  hchart("column", hcaes(x = class, y = number_of_cars, group= drv),
+         dataLabels = list(enabled = TRUE, format = "{y}"),
+         stacking = "normal")  |>  
+  hc_xAxis(title = list(text = "Type of car"))  |>  
+  hc_yAxis(title = list(text = "Number of cars"),
+           labels = list(format = "{value}"))  |>  
+  hc_title(text = list("Distribution of Car Types by Drive Train"))  |> 
+  hc_legend(title = list(text = "Type of Drive Train")) |>
+  hc_exporting(enabled = TRUE)  |> 
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+:::
+
+### Pie Charts
+
+Pie charts are effective for showing the composition or distribution of categorical data, such as market shares or proportions of a whole.
+
+::: panel-tabset
+## Pie Chart
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+mpg |>  
+  group_by(drv)  |>  
+  summarise(number_of_cars = n())  |>  
+  arrange(desc(number_of_cars)) |>  
+  hchart("pie", hcaes(x = drv, y = number_of_cars),
+         dataLabels = list(format = "<b>{point.name}</b>:<br>{point.number_of_cars}"),
+         name = "Number of cars",
+         showInLegend = TRUE)  |>  
+  hc_colors(c("#dc3545", "#5c6f7e", "orange", "#005383", "#0087bb"))  |>  
+  hc_title(text = list("Drive Train Distribution"))  |>
+  hc_legend(title = list(text = "Type of Drive Train")) |>
+  hc_exporting(enabled = FALSE)  |> 
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+
+## Pie Chart With % label
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+mpg  |>  
+  group_by(drv) |>  
+  summarise(number_of_cars = n())  |>  
+  mutate(percentage_of_cars = round(number_of_cars/sum(number_of_cars)*100,1))  |> 
+  arrange(desc(percentage_of_cars)) |>  
+  hchart("pie", hcaes(x = drv, y = percentage_of_cars),
+         dataLabels = list(format = "<b>{point.name}</b>:<br>
+                           {point.percentage_of_cars:.1f}%"),
+         name = "Percentage of cars",
+         showInLegend = TRUE)  |>  
+  hc_colors(c("#dc3545", "#5c6f7e", "orange", "#005383", "#0087bb")) %>% 
+  hc_title(text = list("Drive Train Distribution"))  |> 
+  hc_legend(title = list(text = "Type of Drive Train")) |>
+  hc_exporting(enabled = FALSE)  |> 
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+
+## Column Chart Alternative
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+mpg  |>  
+  group_by(drv) |>  
+  summarise(number_of_cars = n())  |>  
+  mutate(percentage_of_cars = round(number_of_cars/sum(number_of_cars)*100,1))  |> 
+  arrange(desc(percentage_of_cars)) |>   
+  hchart("column", hcaes(x = drv, y = percentage_of_cars),
+         color = "#5c6f7e",
+         dataLabels = list(enabled = TRUE, format = "{y}%"),
+         name = "Percentage of cars")  |>  
+  hc_xAxis(title = list(text = "Type of drive train"))  |>  
+  hc_yAxis(title = list(text = "Percentage of cars"),
+           labels = list(format = "{value}%"))  |>  
+  hc_title(text = list("Drive Train Distribution"))  |>  
+  hc_exporting(enabled = TRUE)  |> 
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+
+## Column Chart Alternative with Different Colors
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+mpg  |>  
+  group_by(drv) |>  
+  summarise(number_of_cars = n())  |>  
+  mutate(percentage_of_cars = round(number_of_cars/sum(number_of_cars)*100,1))  |> 
+  arrange(desc(percentage_of_cars)) |>   
+  hchart("column", hcaes(x = drv, y = percentage_of_cars, 
+                         color = c("#dc3545", "#5c6f7e", "#005383")),
+         dataLabels = list(enabled = TRUE, format = "{y}%"),
+         name = "Percentage of cars")  |>  
+  hc_xAxis(title = list(text = "Type of drive train"))  |>  
+  hc_yAxis(title = list(text = "Percentage of cars"),
+           labels = list(format = "{value}%"))  |>  
+  hc_title(text = list("Drive Train Distribution"))  |>  
+  hc_exporting(enabled = TRUE)  |> 
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+:::
+
+### Scatter Charts
+
+Scatter plots are used to visualize relationships between two continuous variables, such as correlation or clustering patterns.
+
+::: panel-tabset
+## Scatter Chart
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+mpg |>  
+  hchart("scatter", hcaes(x = displ, y = cty),
+         color = "orange")  |>  
+  hc_xAxis(title = list(text = "Engine displacement, in litres")) |>   
+  hc_yAxis(title = list(text = "City miles per gallon")) |> 
+  hc_title(text = list("Engine Displacement (in litres) vs City Miles Per Gallon"))  |>  
+  hc_exporting(enabled = TRUE)  |> 
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+
+## Grouped Scatter Chart
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+mpg  |>  
+  hchart("scatter", hcaes(x = displ, y = cty, group = drv))  |>  
+  hc_xAxis(title = list(text = "Engine displacement, in litres")) |>   
+  hc_yAxis(title = list(text = "City miles per gallon")) |> 
+  hc_title(text = list("Engine Displacement (in litres) vs City Miles Per Gallon
+                       According to the Type of Drive Train")) |>  
+  hc_legend(title = list(text = "Type of Drive Train")) |>
+  hc_exporting(enabled = TRUE)  |> 
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+
+## Grouped Scatter Chart with Custom Colors
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+mpg  |>  
+  hchart("scatter", hcaes(x = displ, y = cty, group = drv))  |>  
+  hc_xAxis(title = list(text = "Engine displacement, in litres")) |>   
+  hc_yAxis(title = list(text = "City miles per gallon")) |> 
+  hc_title(text = list("Engine Displacement (in litres) vs City Miles Per Gallon
+                       According to the Type of Drive Train")) |> 
+  hc_legend(title = list(text = "Type of Drive Train")) |> 
+  hc_exporting(enabled = TRUE)  |> 
+  hc_colors(c("#dc3545", "#5c6f7e", "orange", "#005383", "#0087bb"))  |>  
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+:::
+
+### Line Charts
+
+Line charts are commonly used to display trends over time or to track changes in data continuously.
+
+::: panel-tabset
+## Line Chart
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+globaltemp   |>  
+  mutate(year = year(date)) |> 
+  group_by(year) |> 
+  summarise(average_minimum_tempature = round(mean(lower),2)) |> 
+  hchart("line", hcaes(x = year, y = average_minimum_tempature),
+         color = "#005383",
+         name = "Average Minimum Tempature") |> 
+  hc_xAxis(title = list(text = "Year")) |>  
+  hc_yAxis(title = list(text = "Average Minimum Temperature")) |>  
+  hc_title(text = list("Average Global Minimum Temperature over the Years")) |>  
+  hc_exporting(enabled = TRUE) |> 
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+
+## Group Line Chart
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+vaccines |> 
+  filter(state %in% c("Florida", "California")) |> 
+  mutate(count = ifelse(is.na(count), 0, count)) |> 
+  hchart("line", hcaes(x = year, y = count, group = state)) |> 
+  hc_xAxis(title = list(text = "Year")) |>  
+  hc_yAxis(title = list(text = "Number of cases per 100k people")) |>  
+  hc_title(text = list("Measles Infected Cases per 100k People 
+                       in Florida & California")) |> 
+  hc_colors(c("#dc3545", "#5c6f7e")) |> 
+  hc_exporting(enabled = TRUE) |> 
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+
+## Stock Line Chart
+
+Create an extensible time-series object
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+globaltemp_xts <- xts(x = globaltemp$lower,
+                      order.by = globaltemp$date)
+```
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+highchart(type = "stock") |> 
+  hc_add_series(globaltemp_xts,
+                type = "line",
+                color = "#005383",
+                name = "Minimum Temperature") |> 
+  hc_xAxis(title = list(text = "Date")) |>  
+  hc_yAxis(title = list(text = "Global Minimum Temperature"),
+           opposite = FALSE) |>  
+  hc_title(text = list("Global Minimum Temperature over the Years")) |>  
+  hc_exporting(enabled = TRUE) |> 
+  hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
+```
+:::
+
+::: {.callout-note appearance="simple"}
+## Thank you for following along
+
+Your friendly neighborhood data scientist
+:::
