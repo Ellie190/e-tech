@@ -2,7 +2,7 @@
 title: "Color Palette Generation and Previewing for Charts and Dashboards"
 description: "Explore methods for choosing colors and color palettes for data visualization. Uncover tools to visualize how these selections will appear in charts and dashboards without the need to create them firsthand."
 author: "Eli Nimy"
-date: "2024-02-14"
+date: "2024-02-12"
 categories: [data visualisation, dashboard]
 image: "color-palette-for-dv.jpg"
 format: 
@@ -28,7 +28,7 @@ When selecting colors for data visualization, websites, or dashboard themes, I o
 
 To access the Google Color Picker, simply open Chrome and search for **"color picker"**.
 
-![](color-picker.png)
+![](color-picker.png){width="567"}
 
 ### Data Color Picker
 

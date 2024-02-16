@@ -2,7 +2,7 @@
 title: "Interactive Data Visualisation with Highcharter in R"
 description: "learn how to create common interactive and customizable data visualizations using Highcharts"
 author: "Eli Nimy"
-date: "2024-02-14"
+date: "2024-02-16"
 categories: [data visualisation, data analysis, r, code]
 image: "interactive-dv-in-r-highcharter.jpg"
 format: 
