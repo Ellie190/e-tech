@@ -104,7 +104,7 @@ quarto install tinytex
 ---
 title: "Measles Infected Cases"
 author: "E-tech Blog"
-date: "`r Sys.Date()`"
+date: "2024-02-17"
 format: pdf
 execute:
   echo: false
@@ -169,7 +169,7 @@ The following code produces an .html report. This is achieved by setting the out
 ---
 title: "Measles Infected Cases"
 author: "E-tech Blog"
-date: "`r Sys.Date()`"
+date: "2024-02-17"
 format: html
 execute:
   echo: false
