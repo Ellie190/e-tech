@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/index.html",
       "/posts/2024-02-16-interactive-data-visualisation-with-highcharter-in-r/index.html",
       "/posts/2024-02-12-color-palettes-generation-for-data-visualisation/index.html"
     ]
