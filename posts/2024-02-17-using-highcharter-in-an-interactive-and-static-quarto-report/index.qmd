@@ -26,10 +26,10 @@ Download options provided by enabling exporting:
 
 ![](download-options.png)
 
-In this post, we will explore another workaround using the  [webshot2](https://rstudio.github.io/webshot2/) and [htmlwidgets](https://www.htmlwidgets.org/) packages. This method enables you to work exclusively within R without the need to download or take screenshots of charts for pasting into other documents.
+In this post, we will explore another workaround using the [webshot2](https://rstudio.github.io/webshot2/) and [htmlwidgets](https://www.htmlwidgets.org/) packages. This method enables you to work exclusively within R without the need to download or take screenshots of charts for pasting into other documents.
 
 ::: callout-note
-To learn more about the YAML Quarto code chunk options used in this post, you can refer to the [Quarto Chuck Options](https://r4ds.hadley.nz/quarto#chunk-options) section in the [R for Data Science (2e)](https://r4ds.hadley.nz/) online book. 
+To learn more about the YAML Quarto code chunk options used in this post, you can refer to the [Quarto Chuck Options](https://r4ds.hadley.nz/quarto#chunk-options) section in the [R for Data Science (2e)](https://r4ds.hadley.nz/) online book.
 :::
 
 ### Package Use-case and Installation
@@ -83,12 +83,19 @@ The line chart generated using Highcharter, showcased in the reports within the 
 library(highcharter)
 vaccines
 ```
-
 :::
 
 ### .pdf Quarto Report {#sec-pdf-quarto-report}
 
 The following code produces a .pdf report, accomplished by setting the output format to PDF using `format: pdf`. The `delay` argument specifies the time to wait before taking a screenshot, in seconds. It is advisable to set a longer delay to ensure all assets display properly.
+
+::: callout-note
+To generate a PDF format report, a **LaTeX** installation is necessary. To ensure smooth output of a .pdf report, please install TinyTeX by executing the following command in your Terminal:
+
+``` {.bash filename="Terminal"}
+quarto install tinytex
+```
+:::
 
 ::: panel-tabset
 ## Code
@@ -142,6 +149,10 @@ webshot(url = "measles_infected_cases_chart.html",
 ### .docx Quarto Report
 
 The .docx Quarto report can be produced by replacing format: pdf with format: docx in the code provided in the @sec-pdf-quarto-report section.
+
+::: callout-note
+Viewing Word documents necessitates the installation of MS Word (or Libre/Open Office on Linux).
+:::
 
 **The .docx format will produce the following report:**
 
