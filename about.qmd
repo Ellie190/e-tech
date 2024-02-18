@@ -13,6 +13,9 @@ about:
     - icon: github
       text: Github
       href: https://github.com/Ellie190
+    - icon: envelope
+      text: Email
+      href: mailto:nimyellie0512@gmail.com
 ---
 
 **Friendly neighborhood** Data Scientist documenting and sharing his learning journey.
