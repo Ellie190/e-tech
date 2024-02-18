@@ -1,0 +1,20 @@
+---
+title: "Showcasing White-Box Implementation of the RSA Digital Signature Scheme"
+categories: [Digital Signature Scheme, Private Key, Public Key]
+image: "rsa.jpg"
+author:
+  - Colin Chibaya
+  - Mfundo Monchwe
+  - Taryn Nicole Michael
+  - Eli Bila Nimy
+date: "2022-10-18"
+format: html
+---
+
+### Abstract
+
+Data security is a priority in online transactions. Data security, in this context, refers to both data confidentiality, data integrity, and data authenticity when online transactions are completed. While a lot has been done to tighten data confidentiality, algorithms to address data integrity and data authenticity are rare. The RSA digital signature scheme dominates and is often connoted when data integrity and data authenticity problems are tabled. However, the original RSA digital signature scheme is not easy to comprehend by layman. Most component units of the RSA digital signature scheme require further clarity to facilitate reproducibility and hence productivity. This study showcases the implementation of a white-box RSA digital signature scheme. In this context, a digital signature is a computational algorithm used to ensure data confidentiality, integrity, and authenticity after online transactions. It is an algorithm that ensures that data is safe, has not been tampered with, and the claimed sender is truly the sender. We build the proposed implementation from an understanding that the RSA digital signature scheme is an asymmetric model which uses two keys. One key is used to sign data such that it can only be verified using the second key. A quantitative research approach was followed in which the effectiveness of the white-box RSA digital signature scheme was evaluated with respect to the execution time and signature verification accuracy. Execution time was assessed for different values of *p*, *q*, and data lengths. Similarly, verification accuracy was also assessed with different values of *p*, *q*, and data lengths. A tradeoff between security and execution time was noted as apparent. Low accuracy was observed when the values of *p* and *q* are small. Thus, big values of *p* and *q* are recommended for better data security.
+
+### Article Link
+
+[SciencePG American Journal of Computer Science and Technology](https://www.sciencepublishinggroup.com/article/10.11648/ajcst.20220504.11)

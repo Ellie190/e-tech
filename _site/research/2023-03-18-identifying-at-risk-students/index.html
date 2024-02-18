@@ -6,8 +6,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Eli Nimy">
+<meta name="author" content="Moeketsi Mosia">
+<meta name="author" content="Colin Chibaya">
+<meta name="dcterms.date" content="2023-03-18">
 
-<title>E-tech Blog - E-Research</title>
+<title>E-tech Blog - Identifying At-Risk Students for Early Intervention—A Probabilistic Machine Learning Approach</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +27,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./et_logo.jpg" rel="icon" type="image/jpeg">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../et_logo.jpg" rel="icon" type="image/jpeg">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,10 +77,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./et_logo.jpg" alt="" class="navbar-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../et_logo.jpg" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">E-tech Blog</span>
     </a>
   </div>
@@ -87,11 +91,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./research.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../research/index.html" rel="" target="">
  <span class="menu-text">E-Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -129,14 +133,35 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">E-Research</h1>
-</div>
+<h1 class="title">Identifying At-Risk Students for Early Intervention—A Probabilistic Machine Learning Approach</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Machine Learning</div>
+    <div class="quarto-category">Probabilistic Machine Learning</div>
+    <div class="quarto-category">Predictive Analytics</div>
+    <div class="quarto-category">At-risk Students</div>
+    <div class="quarto-category">Early Intervention</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Eli Nimy </p>
+             <p>Moeketsi Mosia </p>
+             <p>Colin Chibaya </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 18, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -144,28 +169,13 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><img src="research-images/clustering.jpg" style="float:right;" alt="cluster Analysis in Education" width="300" height="250"></p>
-<section id="web-based-clustering-application-for-determining-and-understanding-student-engagement-levels-in-virtual-learning-environments" class="level3">
-<h3 class="anchored" data-anchor-id="web-based-clustering-application-for-determining-and-understanding-student-engagement-levels-in-virtual-learning-environments">Web-based Clustering Application for Determining and Understanding Student Engagement Levels in Virtual Learning Environments</h3>
-<p><strong>Keywords:</strong> <code>Virtual Learning Environments</code>, <code>Student Engagement</code>, <code>Clustering</code>.</p>
-<p><strong>Publication Date:</strong> <code>30 November 2023</code></p>
-<p><a href="https://doi.org/10.38159/ehass.20234122" target="_blank" class="btn btn-primary btn-lg">Read Article</a></p>
-<p><br></p>
-<p><img src="research-images/pml.jpg" style="float:right;" alt="cluster Analysis in Education" width="300" height="250"></p>
+<section id="abstract" class="level3">
+<h3 class="anchored" data-anchor-id="abstract">Abstract</h3>
+<p>The utilization of learning analytics to identify at-risk students for early intervention has exhibited promising results. However, most predictive models utilized to address this issue have been based on non-probabilistic machine learning models. In response, this study incorporated probabilistic machine learning for two reasons: (1) to facilitate the inclusion of domain knowledge, and (2) to enable the quantification of uncertainty in model parameters and predictions. The study developed a five-stage, probabilistic logistic regression model to identify at-risk students at different stages throughout the academic calendar. Rather than predicting a student’s final or exam mark, the model was focused on predicting the at-risk probabilities for subsequent assessments—specifically, the probability of a student failing an upcoming assessment. The model incorporated student engagement data from Moodle, as well as demographic and student performance data. The study’s findings indicate that the significance and certainty of student engagement and demographic variables decreased after incorporating student-performance variables, such as assignments and tests. The most effective week for identifying at-risk students was found to be week 6, when the accuracy was 92.81%. Furthermore, the average level of uncertainty exhibited by the models decreased by 60% from stage 3 to 5, indicating more reliable predictions at later than earlier stages. The study highlights the potential of a probabilistic machine learning model to aid instructors and practitioners in identifying at-risk students, and thereby to enhance academic outcomes.</p>
 </section>
-<section id="identifying-at-risk-students-for-early-interventiona-probabilistic-machine-learning-approach" class="level3">
-<h3 class="anchored" data-anchor-id="identifying-at-risk-students-for-early-interventiona-probabilistic-machine-learning-approach">Identifying At-Risk Students for Early Intervention—A Probabilistic Machine Learning Approach</h3>
-<p><strong>Keywords:</strong> <code>Machine Learning</code>, <code>Probabilistic Machine Learning</code>, <code>Predictive Analytics</code>, <code>At-risk Students</code>, <code>Early Intervention</code></p>
-<p><strong>Publication Date:</strong> <code>18 March 2023</code></p>
-<p><a href="https://doi.org/10.3390/app13063869" target="_blank" class="btn btn-primary btn-lg">Read Article</a></p>
-<p><br></p>
-<p><img src="research-images/rsa.jpg" style="float:right;" alt="cluster Analysis in Education" width="300" height="250"></p>
-</section>
-<section id="showcasing-white-box-implementation-of-the-rsa-digital-signature-scheme" class="level3">
-<h3 class="anchored" data-anchor-id="showcasing-white-box-implementation-of-the-rsa-digital-signature-scheme">Showcasing White-Box Implementation of the RSA Digital Signature Scheme</h3>
-<p><strong>Keywords:</strong> <code>Digital Signature Scheme</code>, <code>Private Key</code>, <code>Public Key</code></p>
-<p><strong>Publication Date:</strong> <code>18 October 2022</code></p>
-<p><a href="https://www.sciencepublishinggroup.com/article/10.11648/ajcst.20220504.11" target="_blank" class="btn btn-primary btn-lg">Read Article</a></p>
+<section id="article-link" class="level3">
+<h3 class="anchored" data-anchor-id="article-link">Article Link</h3>
+<p><a href="https://www.mdpi.com/2076-3417/13/6/3869">MDPI Applied Sciences Journal</a></p>
 
 
 </section>

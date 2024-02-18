@@ -1,0 +1,19 @@
+---
+title: "Identifying At-Risk Students for Early Intervention—A Probabilistic Machine Learning Approach"
+categories: [Machine Learning, Probabilistic Machine Learning, Predictive Analytics, At-risk Students, Early Intervention]
+image: "pml.jpg"
+author:
+  - Eli Nimy
+  - Moeketsi Mosia
+  - Colin Chibaya
+date: "2023-03-18"
+format: html
+---
+
+### Abstract
+
+The utilization of learning analytics to identify at-risk students for early intervention has exhibited promising results. However, most predictive models utilized to address this issue have been based on non-probabilistic machine learning models. In response, this study incorporated probabilistic machine learning for two reasons: (1) to facilitate the inclusion of domain knowledge, and (2) to enable the quantification of uncertainty in model parameters and predictions. The study developed a five-stage, probabilistic logistic regression model to identify at-risk students at different stages throughout the academic calendar. Rather than predicting a student’s final or exam mark, the model was focused on predicting the at-risk probabilities for subsequent assessments—specifically, the probability of a student failing an upcoming assessment. The model incorporated student engagement data from Moodle, as well as demographic and student performance data. The study’s findings indicate that the significance and certainty of student engagement and demographic variables decreased after incorporating student-performance variables, such as assignments and tests. The most effective week for identifying at-risk students was found to be week 6, when the accuracy was 92.81%. Furthermore, the average level of uncertainty exhibited by the models decreased by 60% from stage 3 to 5, indicating more reliable predictions at later than earlier stages. The study highlights the potential of a probabilistic machine learning model to aid instructors and practitioners in identifying at-risk students, and thereby to enhance academic outcomes.
+
+### Article Link
+
+[MDPI Applied Sciences Journal](https://www.mdpi.com/2076-3417/13/6/3869)

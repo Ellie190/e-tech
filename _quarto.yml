@@ -7,7 +7,7 @@ website:
   navbar:
     logo: et_logo.jpg
     left:
-      - research.qmd
+      - href: research/index.qmd
       - about.qmd
     right:
       - icon: github

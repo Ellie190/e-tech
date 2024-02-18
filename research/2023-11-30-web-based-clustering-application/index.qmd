@@ -1,0 +1,18 @@
+---
+title: "Web-based Clustering Application for Determining and Understanding Student Engagement Levels in Virtual Learning Environments"
+categories: [Virtual Learning Environments, Student Engagement, Clustering]
+image: "clustering.jpg"
+author:
+  - Eli Nimy
+  - Moeketsi Mosia
+date: "2023-11-30"
+format: html
+---
+
+### Abstract
+
+The increasing use of virtual learning environments (VLEs) in recent years has transformed teaching and learning methods. Universities now combine VLEs with traditional classrooms to accommodate hybrid teaching and learning approaches. However, student engagement with VLEs varies, and universities lack the tools to effectively determine and analyse VLE engagement. Consequently, data-driven decision-making regarding VLE usage remains a challenge for universities. This study thus proposed a user-friendly web-based application, using a R shiny framework, to determine and understand student engagement levels in VLEs. In this study, two clustering methods, K-means and Gaussian Mixture Model (GMM) were compared, to identify the most effective method for the proposed application. The results indicated that GMM outperforms K-means by generating more accurate and comprehensive groupings of student engagement levels. One key advantage of the GMM method is its ability to capture uncertainty and provide probabilities of student membership in each level of engagement, which enhances its usefulness for decision-making. Furthermore, the GMM method achieves these outcomes efficiently, saving valuable learning time. This research holds significant implications for education by providing valuable guidance for the development of Educational Data Mining (EDM) applications. Universities can leverage these applications to gain deep insights into VLE usage and enhance their understanding of student engagement. By adopting this web-based application, educators and administrators can make informed decisions and tailor interventions to optimize student learning experiences within VLEs.
+
+### Article Link
+
+[Noyam E-Journal of Humanities, Arts and Social Sciences](https://noyam.org/ehass20234122/)

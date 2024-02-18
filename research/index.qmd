@@ -1,0 +1,12 @@
+---
+title: "E-Research"
+listing:
+    contents: .
+    sort: date desc
+    type: grid
+    categories: true
+    sort-ui: true
+    filter-ui: true
+    feed: true
+page-layout: full
+---
