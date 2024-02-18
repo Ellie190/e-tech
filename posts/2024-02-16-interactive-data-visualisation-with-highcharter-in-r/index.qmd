@@ -329,6 +329,7 @@ mpg  |>
   hchart("column", hcaes(x = class, y = number_of_cars, group= drv),
          dataLabels = list(enabled = TRUE, format = "{y}"),
          stacking = "normal")  |>  
+  hc_colors(c("#005383", "#5c6f7e", "#dc3545")) |>  
   hc_xAxis(title = list(text = "Type of car"))  |>  
   hc_yAxis(title = list(text = "Number of cars"),
            labels = list(format = "{value}"))  |>  
@@ -358,7 +359,7 @@ mpg |>
          dataLabels = list(format = "<b>{point.name}</b>:<br>{point.number_of_cars}"),
          name = "Number of cars",
          showInLegend = TRUE)  |>  
-  hc_colors(c("#dc3545", "#5c6f7e", "orange", "#005383", "#0087bb"))  |>  
+  hc_colors(c("#dc3545", "#5c6f7e", "orange"))  |>  
   hc_title(text = list("Drive Train Distribution"))  |>
   hc_legend(title = list(text = "Type of Drive Train")) |>
   hc_exporting(enabled = FALSE)  |> 
@@ -381,7 +382,7 @@ mpg  |>
                            {point.percentage_of_cars:.1f}%"),
          name = "Percentage of cars",
          showInLegend = TRUE)  |>  
-  hc_colors(c("#dc3545", "#5c6f7e", "orange", "#005383", "#0087bb")) %>% 
+  hc_colors(c("#dc3545", "#5c6f7e", "orange")) |>  
   hc_title(text = list("Drive Train Distribution"))  |> 
   hc_legend(title = list(text = "Type of Drive Train")) |>
   hc_exporting(enabled = FALSE)  |> 
@@ -487,7 +488,7 @@ mpg  |>
                        According to the Type of Drive Train")) |> 
   hc_legend(title = list(text = "Type of Drive Train")) |> 
   hc_exporting(enabled = TRUE)  |> 
-  hc_colors(c("#dc3545", "#5c6f7e", "orange", "#005383", "#0087bb"))  |>  
+  hc_colors(c("#dc3545", "#5c6f7e", "orange"))  |>  
   hc_add_theme(hc_theme(chart = list(backgroundColor = "white")))
 ```
 :::

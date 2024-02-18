@@ -66,6 +66,18 @@ The [dashboard color checker](https://bit.ly/DashboardColorChecker) serves as a 
 
 ![](dashboard-color-checker.png)
 
+### Muted Colors
+
+I often choose muted colors for many of my data visualisation tasks. Muted colors, also known as desaturated or subdued colors, are softened by adding gray or complementary hues to reduce their brightness intensity.
+
+These are the reasons why I choose muted colors:
+
+-   **Reducing Noise**: Muted colors minimize distractions, focusing attention on the data.
+
+-   **Enhancing Readability**: Muted colors ease strain and improve comprehension.
+
+-   **Conveying Professionalism**: Muted colors offer a mature, serious look suitable for formal contexts.
+
 ### Link to All Resources
 
 -   [Google Color Picker](https://www.google.com/search?q=color+picker)
