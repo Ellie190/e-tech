@@ -4,6 +4,7 @@ project:
 website:
   title: "E-tech Blog"
   favicon: et_logo.jpg
+  site-url: https://e-tech-blog.netlify.app/
   navbar:
     logo: et_logo.jpg
     left:
@@ -16,6 +17,8 @@ website:
         href: https://www.linkedin.com/in/eli-nimy-a752a1191/
       - icon: person-badge
         href: https://eli-nimy.netlify.app
+      - icon: rss
+        href: index.xml
   page-footer:
     left: "© 2024 Eli Nimy."
     right:
