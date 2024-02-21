@@ -7,6 +7,14 @@ listing:
   categories: true
   sort-ui: true
   filter-ui: true
+  fields: 
+  - title
+  - description
+  - date
+  - author
+  - image
+  - categories
+  - reading-time
 page-layout: full
 title-block-banner: false
 ---

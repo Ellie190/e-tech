@@ -148,7 +148,7 @@ webshot(url = "measles_infected_cases_chart.html",
 
 ### .docx Quarto Report
 
-The .docx Quarto report can be produced by replacing format: pdf with format: docx in the code provided in the @sec-pdf-quarto-report section.
+The .docx Quarto report can be produced by replacing `format: pdf` with `format: docx` in the code provided in @sec-pdf-quarto-report. 
 
 ::: callout-note
 Viewing Word documents necessitates the installation of MS Word (or Libre/Open Office on Linux).
