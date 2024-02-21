@@ -2,14 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://e-tech-blog.netlify.app/index.html</loc>
-    <lastmod>2024-02-21T23:06:54.212Z</lastmod>
+    <lastmod>2024-02-21T23:20:30.025Z</lastmod>
   </url>
   <url>
     <loc>https://e-tech-blog.netlify.app/posts/2024-02-12-color-palettes-generation-for-data-visualisation/index.html</loc>
-    <lastmod>2024-02-21T22:41:35.237Z</lastmod>
+    <lastmod>2024-02-21T23:20:15.877Z</lastmod>
   </url>
   <url>
     <loc>https://e-tech-blog.netlify.app/research/index.html</loc>
     <lastmod>2024-02-21T22:41:46.776Z</lastmod>
+  </url>
+  <url>
+    <loc>https://e-tech-blog.netlify.app/posts/2024-02-16-interactive-data-visualisation-with-highcharter-in-r/index.html</loc>
+    <lastmod>2024-02-21T23:20:24.697Z</lastmod>
+  </url>
+  <url>
+    <loc>https://e-tech-blog.netlify.app/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/index.html</loc>
+    <lastmod>2024-02-21T23:20:29.328Z</lastmod>
   </url>
 </urlset>
