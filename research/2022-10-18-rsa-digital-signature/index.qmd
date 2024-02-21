@@ -1,7 +1,7 @@
 ---
 title: "Showcasing White-Box Implementation of the RSA Digital Signature Scheme"
 categories: [Digital Signature Scheme, Private Key, Public Key]
-image: "rsa.jpg"
+image: rsa.jpg
 author:
   - Colin Chibaya
   - Mfundo Monchwe

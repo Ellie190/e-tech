@@ -4,7 +4,7 @@ description: "learn how to create common interactive and customizable data visua
 author: "Eli Nimy"
 date: "2024-02-16"
 categories: [data visualisation, data analysis, r, code]
-image: "interactive-dv-in-r-highcharter.jpg"
+image: interactive-dv-in-r-highcharter.jpg
 format: 
   html:
     toc: true

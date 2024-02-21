@@ -4,7 +4,7 @@ description: "Explore methods for choosing colors and color palettes for data vi
 author: "Eli Nimy"
 date: "2024-02-12"
 categories: [data visualisation, dashboard]
-image: "color-palette-for-dv.jpg"
+image: color-palette-for-dv.jpg
 format: 
   html:
     toc: true
