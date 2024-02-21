@@ -5,6 +5,8 @@ website:
   title: "E-tech Blog"
   favicon: et_logo.jpg
   site-url: https://e-tech-blog.netlify.app/
+  open-graph:
+    locale: en_US
   navbar:
     logo: et_logo.jpg
     left:

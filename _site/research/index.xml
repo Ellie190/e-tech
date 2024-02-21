@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>E-tech Blog</title>
+<link>https://e-tech-blog.netlify.app/research/index.html</link>
+<atom:link href="https://e-tech-blog.netlify.app/research/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.3.450</generator>
+<lastBuildDate>Wed, 29 Nov 2023 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Web-based Clustering Application for Determining and Understanding Student Engagement Levels in Virtual Learning Environments</title>
+  <dc:creator>Eli Nimy</dc:creator>
+  <dc:creator>Moeketsi Mosia</dc:creator>
+  <link>https://e-tech-blog.netlify.app/research/2023-11-30-web-based-clustering-application/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="abstract" class="level3">
+<h3 class="anchored" data-anchor-id="abstract">Abstract</h3>
+<p>The increasing use of virtual learning environments (VLEs) in recent years has transformed teaching and learning methods. Universities now combine VLEs with traditional classrooms to accommodate hybrid teaching and learning approaches. However, student engagement with VLEs varies, and universities lack the tools to effectively determine and analyse VLE engagement. Consequently, data-driven decision-making regarding VLE usage remains a challenge for universities. This study thus proposed a user-friendly web-based application, using a R shiny framework, to determine and understand student engagement levels in VLEs. In this study, two clustering methods, K-means and Gaussian Mixture Model (GMM) were compared, to identify the most effective method for the proposed application. The results indicated that GMM outperforms K-means by generating more accurate and comprehensive groupings of student engagement levels. One key advantage of the GMM method is its ability to capture uncertainty and provide probabilities of student membership in each level of engagement, which enhances its usefulness for decision-making. Furthermore, the GMM method achieves these outcomes efficiently, saving valuable learning time. This research holds significant implications for education by providing valuable guidance for the development of Educational Data Mining (EDM) applications. Universities can leverage these applications to gain deep insights into VLE usage and enhance their understanding of student engagement. By adopting this web-based application, educators and administrators can make informed decisions and tailor interventions to optimize student learning experiences within VLEs.</p>
+</section>
+<section id="article-link" class="level3">
+<h3 class="anchored" data-anchor-id="article-link">Article Link</h3>
+<p><a href="https://noyam.org/ehass20234122/">Noyam E-Journal of Humanities, Arts and Social Sciences</a></p>
+
+
+</section>
+
+ ]]></description>
+  <category>Virtual Learning Environments</category>
+  <category>Student Engagement</category>
+  <category>Clustering</category>
+  <guid>https://e-tech-blog.netlify.app/research/2023-11-30-web-based-clustering-application/index.html</guid>
+  <pubDate>Wed, 29 Nov 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://e-tech-blog.netlify.app/research/2023-11-30-web-based-clustering-application/clustering.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Identifying At-Risk Students for Early Intervention—A Probabilistic Machine Learning Approach</title>
+  <dc:creator>Eli Nimy</dc:creator>
+  <dc:creator>Moeketsi Mosia</dc:creator>
+  <dc:creator>Colin Chibaya</dc:creator>
+  <link>https://e-tech-blog.netlify.app/research/2023-03-18-identifying-at-risk-students/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="abstract" class="level3">
+<h3 class="anchored" data-anchor-id="abstract">Abstract</h3>
+<p>The utilization of learning analytics to identify at-risk students for early intervention has exhibited promising results. However, most predictive models utilized to address this issue have been based on non-probabilistic machine learning models. In response, this study incorporated probabilistic machine learning for two reasons: (1) to facilitate the inclusion of domain knowledge, and (2) to enable the quantification of uncertainty in model parameters and predictions. The study developed a five-stage, probabilistic logistic regression model to identify at-risk students at different stages throughout the academic calendar. Rather than predicting a student’s final or exam mark, the model was focused on predicting the at-risk probabilities for subsequent assessments—specifically, the probability of a student failing an upcoming assessment. The model incorporated student engagement data from Moodle, as well as demographic and student performance data. The study’s findings indicate that the significance and certainty of student engagement and demographic variables decreased after incorporating student-performance variables, such as assignments and tests. The most effective week for identifying at-risk students was found to be week 6, when the accuracy was 92.81%. Furthermore, the average level of uncertainty exhibited by the models decreased by 60% from stage 3 to 5, indicating more reliable predictions at later than earlier stages. The study highlights the potential of a probabilistic machine learning model to aid instructors and practitioners in identifying at-risk students, and thereby to enhance academic outcomes.</p>
+</section>
+<section id="article-link" class="level3">
+<h3 class="anchored" data-anchor-id="article-link">Article Link</h3>
+<p><a href="https://www.mdpi.com/2076-3417/13/6/3869">MDPI Applied Sciences Journal</a></p>
+
+
+</section>
+
+ ]]></description>
+  <category>Machine Learning</category>
+  <category>Probabilistic Machine Learning</category>
+  <category>Predictive Analytics</category>
+  <category>At-risk Students</category>
+  <category>Early Intervention</category>
+  <guid>https://e-tech-blog.netlify.app/research/2023-03-18-identifying-at-risk-students/index.html</guid>
+  <pubDate>Fri, 17 Mar 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://e-tech-blog.netlify.app/research/2023-03-18-identifying-at-risk-students/pml.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Showcasing White-Box Implementation of the RSA Digital Signature Scheme</title>
+  <dc:creator>Colin Chibaya</dc:creator>
+  <dc:creator>Mfundo Monchwe</dc:creator>
+  <dc:creator>Taryn Nicole Michael</dc:creator>
+  <dc:creator>Eli Bila Nimy</dc:creator>
+  <link>https://e-tech-blog.netlify.app/research/2022-10-18-rsa-digital-signature/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="abstract" class="level3">
+<h3 class="anchored" data-anchor-id="abstract">Abstract</h3>
+<p>Data security is a priority in online transactions. Data security, in this context, refers to both data confidentiality, data integrity, and data authenticity when online transactions are completed. While a lot has been done to tighten data confidentiality, algorithms to address data integrity and data authenticity are rare. The RSA digital signature scheme dominates and is often connoted when data integrity and data authenticity problems are tabled. However, the original RSA digital signature scheme is not easy to comprehend by layman. Most component units of the RSA digital signature scheme require further clarity to facilitate reproducibility and hence productivity. This study showcases the implementation of a white-box RSA digital signature scheme. In this context, a digital signature is a computational algorithm used to ensure data confidentiality, integrity, and authenticity after online transactions. It is an algorithm that ensures that data is safe, has not been tampered with, and the claimed sender is truly the sender. We build the proposed implementation from an understanding that the RSA digital signature scheme is an asymmetric model which uses two keys. One key is used to sign data such that it can only be verified using the second key. A quantitative research approach was followed in which the effectiveness of the white-box RSA digital signature scheme was evaluated with respect to the execution time and signature verification accuracy. Execution time was assessed for different values of&nbsp;<em>p</em>,&nbsp;<em>q</em>, and data lengths. Similarly, verification accuracy was also assessed with different values of&nbsp;<em>p</em>,&nbsp;<em>q</em>, and data lengths. A tradeoff between security and execution time was noted as apparent. Low accuracy was observed when the values of&nbsp;<em>p</em>&nbsp;and&nbsp;<em>q</em>&nbsp;are small. Thus, big values of&nbsp;<em>p</em>&nbsp;and&nbsp;<em>q</em>&nbsp;are recommended for better data security.</p>
+</section>
+<section id="article-link" class="level3">
+<h3 class="anchored" data-anchor-id="article-link">Article Link</h3>
+<p><a href="https://www.sciencepublishinggroup.com/article/10.11648/ajcst.20220504.11">SciencePG American Journal of Computer Science and Technology</a></p>
+
+
+</section>
+
+ ]]></description>
+  <category>Digital Signature Scheme</category>
+  <category>Private Key</category>
+  <category>Public Key</category>
+  <guid>https://e-tech-blog.netlify.app/research/2022-10-18-rsa-digital-signature/index.html</guid>
+  <pubDate>Mon, 17 Oct 2022 22:00:00 GMT</pubDate>
+  <media:content url="https://e-tech-blog.netlify.app/research/2022-10-18-rsa-digital-signature/rsa.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>
