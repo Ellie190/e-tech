@@ -20,7 +20,7 @@ I recommend reading this post in dark mode if the example images are too intense
 
 -   **Hex color:** A color expressed as a six-digit combination of numbers and letters defined by its mix of red, green and blue (RGB).
 
-The reminder of this post goes through the resources I use for color palette generation and viewing for charts and dashboards.
+The remainder of this post will go through the resources I use for color palette generation and previewing how charts and dashboards will look with it.
 
 ### Google Color Picker
 
@@ -64,6 +64,12 @@ The images below show the different color generation options and how they look i
 
 The [dashboard color checker](https://bit.ly/DashboardColorChecker) serves as a great tool for previewing how a dashboard will look with different color palettes. It provides the option to copy the URL of the color palettes generated in Coolors.
 
+This dashboard color checker was developed by [Cameron Seamons](https://www.linkedin.com/in/cameron-css/).
+
+[Cameron LinkedIn post on the dashboard color checker](https://www.linkedin.com/feed/update/urn:li:activity:7064952634331336704/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7064952634331336704%29)
+
+[Joshua Tapley](https://www.linkedin.com/in/josh-tapley/) provides a [tutorial](https://www.linkedin.com/feed/update/urn:li:activity:7064072590314590208/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7064072590314590208%29) on how to create the Dashboard Color Tester app.
+
 ![](dashboard-color-checker.png)
 
 ### Muted Colors
@@ -77,6 +83,10 @@ These are the reasons why I choose muted colors:
 -   **Enhancing Readability**: Muted colors ease strain and improve comprehension.
 
 -   **Conveying Professionalism**: Muted colors offer a mature, serious look suitable for formal contexts.
+
+::: callout-tip
+A simple Google search for **"muted color hex codes"** can help you find websites that provide them.
+:::
 
 ### Link to All Resources
 
