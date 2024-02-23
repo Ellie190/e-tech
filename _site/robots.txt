@@ -1,1 +1,1 @@
-Sitemap: https://e-tech-blog.netlify.app/sitemap.xml
+Sitemap: https://elitechblog.com/sitemap.xml

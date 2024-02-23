@@ -6,15 +6,20 @@
       version="2.0">
 <channel>
 <title>E-tech Blog</title>
-<link>https://e-tech-blog.netlify.app/index.html</link>
-<atom:link href="https://e-tech-blog.netlify.app/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://elitechblog.com/index.html</link>
+<atom:link href="https://elitechblog.com/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
+<image>
+<url>https://elitechblog.com/preview.jpg</url>
+<title>E-tech Blog</title>
+<link>https://elitechblog.com/index.html</link>
+</image>
 <generator>quarto-1.3.450</generator>
 <lastBuildDate>Fri, 16 Feb 2024 22:00:00 GMT</lastBuildDate>
 <item>
   <title>Using Highcharter in an Interactive and Static Quarto Report</title>
   <dc:creator>Eli Nimy</dc:creator>
-  <link>https://e-tech-blog.netlify.app/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/index.html</link>
+  <link>https://elitechblog.com/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/index.html</link>
   <description><![CDATA[ 
 
 
@@ -34,7 +39,7 @@ background-color: null;
 font-style: inherit;">TRUE</span>)</span></code></pre></div>
 <p>The <code>highcharter_chart_object</code> represents a highcharter chart.</p>
 <p>Download options provided by enabling exporting:</p>
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/download-options.png" class="img-fluid"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/download-options.png" class="img-fluid"></p>
 <p>In this post, we will explore another workaround using the <a href="https://rstudio.github.io/webshot2/">webshot2</a> and <a href="https://www.htmlwidgets.org/">htmlwidgets</a> packages. This method enables you to work exclusively within R without the need to download or take screenshots of charts for pasting into other documents.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -382,12 +387,12 @@ background-color: null;
 font-style: inherit;">2</span>)</span></code></pre></div>
 </div>
 <div id="tabset-1-2" class="tab-pane" aria-labelledby="tabset-1-2-tab">
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/rstudio-pdf-report-code-snippet.png" class="img-fluid"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/rstudio-pdf-report-code-snippet.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
 <p><strong>The above code produces the following report:</strong></p>
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/pdf_report.png" class="img-fluid"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/pdf_report.png" class="img-fluid"></p>
 </section>
 <section id="docx-quarto-report" class="level3" data-number="0.4">
 <h3 data-number="0.4" class="anchored" data-anchor-id="docx-quarto-report"><span class="header-section-number">0.4</span> .docx Quarto Report</h3>
@@ -406,7 +411,7 @@ Note
 </div>
 </div>
 <p><strong>The .docx format will produce the following report:</strong></p>
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/docx_report.png" class="img-fluid"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/docx_report.png" class="img-fluid"></p>
 </section>
 <section id="html-quarto-report" class="level3" data-number="0.5">
 <h3 data-number="0.5" class="anchored" data-anchor-id="html-quarto-report"><span class="header-section-number">0.5</span> .html Quarto Report</h3>
@@ -612,17 +617,17 @@ font-style: inherit;">"white"</span>)))</span>
 <span id="cb12-16">measles_infected_cases</span></code></pre></div>
 </div>
 <div id="tabset-2-2" class="tab-pane" aria-labelledby="tabset-2-2-tab">
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/rstudio-html-report-code-snippet.png" class="img-fluid"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/rstudio-html-report-code-snippet.png" class="img-fluid"></p>
 </div>
 </div>
 </div>
 <p><strong>The above code produces the following report:</strong></p>
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/html_report.png" class="img-fluid"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/html_report.png" class="img-fluid"></p>
 </section>
 <section id="sejda-.html-to-pdf" class="level3" data-number="0.6">
 <h3 data-number="0.6" class="anchored" data-anchor-id="sejda-.html-to-pdf"><span class="header-section-number">0.6</span> Sejda .html to PDF</h3>
 <p>Alternatively, the <a href="https://www.sejda.com/html-to-pdf">Sejda HTML to PDF</a> converter can be used to quickly convert a .html format report to a .pdf report.</p>
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/sedja-html-to-pdf-converter.png" class="img-fluid"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/sedja-html-to-pdf-converter.png" class="img-fluid"></p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -646,14 +651,14 @@ Thank you for following along
   <category>r</category>
   <category>quarto</category>
   <category>code</category>
-  <guid>https://e-tech-blog.netlify.app/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/index.html</guid>
+  <guid>https://elitechblog.com/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/index.html</guid>
   <pubDate>Fri, 16 Feb 2024 22:00:00 GMT</pubDate>
-  <media:content url="https://e-tech-blog.netlify.app/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://elitechblog.com/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Interactive Data Visualisation with Highcharter in R</title>
   <dc:creator>Eli Nimy</dc:creator>
-  <link>https://e-tech-blog.netlify.app/posts/2024-02-16-interactive-data-visualisation-with-highcharter-in-r/index.html</link>
+  <link>https://elitechblog.com/posts/2024-02-16-interactive-data-visualisation-with-highcharter-in-r/index.html</link>
   <description><![CDATA[ 
 
 
@@ -2850,14 +2855,14 @@ Thank you for following along
   <category>data analysis</category>
   <category>r</category>
   <category>code</category>
-  <guid>https://e-tech-blog.netlify.app/posts/2024-02-16-interactive-data-visualisation-with-highcharter-in-r/index.html</guid>
+  <guid>https://elitechblog.com/posts/2024-02-16-interactive-data-visualisation-with-highcharter-in-r/index.html</guid>
   <pubDate>Thu, 15 Feb 2024 22:00:00 GMT</pubDate>
-  <media:content url="https://e-tech-blog.netlify.app/posts/2024-02-16-interactive-data-visualisation-with-highcharter-in-r/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://elitechblog.com/posts/2024-02-16-interactive-data-visualisation-with-highcharter-in-r/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Color Palette Generation and Previewing for Charts and Dashboards</title>
   <dc:creator>Eli Nimy</dc:creator>
-  <link>https://e-tech-blog.netlify.app/posts/2024-02-12-color-palettes-generation-for-data-visualisation/index.html</link>
+  <link>https://elitechblog.com/posts/2024-02-12-color-palettes-generation-for-data-visualisation/index.html</link>
   <description><![CDATA[ 
 
 
@@ -2888,7 +2893,7 @@ Note
 <h3 class="anchored" data-anchor-id="google-color-picker">Google Color Picker</h3>
 <p>When selecting colors for data visualization, websites, or dashboard themes, I often rely on the Google Color Picker tool. It’s an excellent resource that allows you to choose colors tailored to your specific use-case. Since the colors are a mix of RGB (Red, Green, Blue), there are a staggering 16,777,216 possible combinations available. This is because each RGB parameter can have a value between 0 and 255, resulting in a total of 256 x 256 x 256 possible colors.</p>
 <p>To access the Google Color Picker, simply open Chrome and search for <strong>“color picker”</strong>.</p>
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-12-color-palettes-generation-for-data-visualisation/color-picker.png" class="img-fluid" width="567"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-12-color-palettes-generation-for-data-visualisation/color-picker.png" class="img-fluid" width="567"></p>
 </section>
 <section id="data-color-picker" class="level3">
 <h3 class="anchored" data-anchor-id="data-color-picker">Data Color Picker</h3>
@@ -2899,7 +2904,7 @@ Note
 <div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-12-color-palettes-generation-for-data-visualisation/palette-generator.png" class="img-fluid figure-img"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-12-color-palettes-generation-for-data-visualisation/palette-generator.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Palette Generator</figcaption>
 </figure>
 </div>
@@ -2907,7 +2912,7 @@ Note
 <div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-12-color-palettes-generation-for-data-visualisation/palette-generator-in-context.png" class="img-fluid figure-img"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-12-color-palettes-generation-for-data-visualisation/palette-generator-in-context.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Palette Generator in Context</figcaption>
 </figure>
 </div>
@@ -2917,7 +2922,7 @@ Note
 <div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-12-color-palettes-generation-for-data-visualisation/single-hue-scale.png" class="img-fluid figure-img"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-12-color-palettes-generation-for-data-visualisation/single-hue-scale.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Single Hue Scale</figcaption>
 </figure>
 </div>
@@ -2925,7 +2930,7 @@ Note
 <div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-12-color-palettes-generation-for-data-visualisation/single-hue-scale-in-context.png" class="img-fluid figure-img"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-12-color-palettes-generation-for-data-visualisation/single-hue-scale-in-context.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Single Hue scale in Context</figcaption>
 </figure>
 </div>
@@ -2935,7 +2940,7 @@ Note
 <div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-12-color-palettes-generation-for-data-visualisation/divergent-color-scale.png" class="img-fluid figure-img"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-12-color-palettes-generation-for-data-visualisation/divergent-color-scale.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Divergent Color Scale</figcaption>
 </figure>
 </div>
@@ -2943,7 +2948,7 @@ Note
 <div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-12-color-palettes-generation-for-data-visualisation/divergent-color-scale-in-context.png" class="img-fluid figure-img"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-12-color-palettes-generation-for-data-visualisation/divergent-color-scale-in-context.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Divergent Color Scale in Context</figcaption>
 </figure>
 </div>
@@ -2955,7 +2960,7 @@ Note
 <section id="coolors" class="level3">
 <h3 class="anchored" data-anchor-id="coolors">Coolors</h3>
 <p><a href="https://coolors.co/palettes/popular">Coolors</a> is a color palette generator and platform where you can explore popular and trending color schemes. It provides inspiration for creating your own palettes through a range of customization options. With Coolors, you can easily discover, experiment, and craft unique color combinations to suit your design needs.</p>
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-12-color-palettes-generation-for-data-visualisation/coolors.png" class="img-fluid"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-12-color-palettes-generation-for-data-visualisation/coolors.png" class="img-fluid"></p>
 <p><br></p>
 </section>
 <section id="dashboard-color-checker" class="level3">
@@ -2964,7 +2969,7 @@ Note
 <p>This dashboard color checker was developed by <a href="https://www.linkedin.com/in/cameron-css/">Cameron Seamons</a>.</p>
 <p><a href="https://www.linkedin.com/feed/update/urn:li:activity:7064952634331336704/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7064952634331336704%29">Cameron LinkedIn post on the dashboard color checker</a></p>
 <p><a href="https://www.linkedin.com/in/josh-tapley/">Joshua Tapley</a> provides a <a href="https://www.linkedin.com/feed/update/urn:li:activity:7064072590314590208/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7064072590314590208%29">tutorial</a> on how to create the Dashboard Color Tester app.</p>
-<p><img src="https://e-tech-blog.netlify.app/posts/2024-02-12-color-palettes-generation-for-data-visualisation/dashboard-color-checker.png" class="img-fluid"></p>
+<p><img src="https://elitechblog.com/posts/2024-02-12-color-palettes-generation-for-data-visualisation/dashboard-color-checker.png" class="img-fluid"></p>
 </section>
 <section id="muted-colors" class="level3">
 <h3 class="anchored" data-anchor-id="muted-colors">Muted Colors</h3>
@@ -3017,9 +3022,9 @@ Thank you for following along
  ]]></description>
   <category>data visualisation</category>
   <category>dashboard</category>
-  <guid>https://e-tech-blog.netlify.app/posts/2024-02-12-color-palettes-generation-for-data-visualisation/index.html</guid>
+  <guid>https://elitechblog.com/posts/2024-02-12-color-palettes-generation-for-data-visualisation/index.html</guid>
   <pubDate>Sun, 11 Feb 2024 22:00:00 GMT</pubDate>
-  <media:content url="https://e-tech-blog.netlify.app/posts/2024-02-12-color-palettes-generation-for-data-visualisation/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://elitechblog.com/posts/2024-02-12-color-palettes-generation-for-data-visualisation/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

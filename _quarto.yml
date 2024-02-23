@@ -3,8 +3,9 @@ project:
 
 website:
   title: "E-tech Blog"
-  favicon: et_logo.jpg
-  site-url: https://e-tech-blog.netlify.app/
+  favicon: preview.jpg
+  image: preview.jpg
+  site-url: https://elitechblog.com/
   open-graph: true
   navbar:
     logo: et_logo.jpg
