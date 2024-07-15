@@ -34,6 +34,38 @@
   </url>
   <url>
     <loc>https://elitechblog.com/index.html</loc>
-    <lastmod>2024-02-23T18:49:55.506Z</lastmod>
+    <lastmod>2024-02-21T22:33:19.756Z</lastmod>
+  </url>
+  <url>
+    <loc>https://elitechblog.com/research/index.html</loc>
+    <lastmod>2024-02-18T14:23:22.826Z</lastmod>
+  </url>
+  <url>
+    <loc>https://elitechblog.com/about.html</loc>
+    <lastmod>2024-02-23T18:52:50.455Z</lastmod>
+  </url>
+  <url>
+    <loc>https://elitechblog.com/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/index.html</loc>
+    <lastmod>2024-07-12T18:08:24.400Z</lastmod>
+  </url>
+  <url>
+    <loc>https://elitechblog.com/research/2023-03-18-identifying-at-risk-students/index.html</loc>
+    <lastmod>2024-06-10T17:41:12.705Z</lastmod>
+  </url>
+  <url>
+    <loc>https://elitechblog.com/posts/2024-02-16-interactive-data-visualisation-with-highcharter-in-r/index.html</loc>
+    <lastmod>2024-02-21T23:19:54.666Z</lastmod>
+  </url>
+  <url>
+    <loc>https://elitechblog.com/posts/2024-07-13-creating-synthetic-patient-data-in-r-and-python/index.html</loc>
+    <lastmod>2024-07-15T19:22:09.051Z</lastmod>
+  </url>
+  <url>
+    <loc>https://elitechblog.com/posts/2024-02-12-color-palettes-generation-for-data-visualisation/index.html</loc>
+    <lastmod>2024-02-21T23:19:41.038Z</lastmod>
+  </url>
+  <url>
+    <loc>https://elitechblog.com/posts/2024-07-14-generating-reports-from-r-shiny-applications/index.html</loc>
+    <lastmod>2024-07-15T22:41:08.820Z</lastmod>
   </url>
 </urlset>

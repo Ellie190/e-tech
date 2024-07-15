@@ -2,15 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.43">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eli Nimy">
-<meta name="dcterms.date" content="2024-02-17">
-<meta name="description" content="Displaying interactive and static charts in different quarto report formats: .html, .pdf, and docx (word document)">
+<meta name="dcterms.date" content="2024-07-14">
+<meta name="description" content="Learn how to add custom report generation functionalities within R Shiny applications and how to write R scripts that generate custom reports using rmarkdown">
 
-<title>E-tech Blog – Using Highcharter in an Interactive and Static Quarto Report</title>
+<title>E-tech Blog - Generating Custom Reports from R Shiny Applications and R scripts</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,7 +36,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -108,9 +108,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<meta property="og:title" content="E-tech Blog - Using Highcharter in an Interactive and Static Quarto Report">
-<meta property="og:description" content="Displaying interactive and static charts in different quarto report formats: .html, .pdf, and docx (word document)">
-<meta property="og:image" content="https://elitechblog.com/posts/2024-02-17-using-highcharter-in-an-interactive-and-static-quarto-report/preview.jpg">
+<meta property="og:title" content="E-tech Blog - Generating Custom Reports from R Shiny Applications and R scripts">
+<meta property="og:description" content="Learn how to add custom report generation functionalities within R Shiny applications and how to write R scripts that generate custom reports using rmarkdown">
+<meta property="og:image" content="https://elitechblog.com/posts/2024-07-14-generating-reports-from-r-shiny-applications/preview.jpg">
 <meta property="og:site_name" content="E-tech Blog">
 </head>
 
@@ -129,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -166,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+          <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
@@ -176,18 +176,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Using Highcharter in an Interactive and Static Quarto Report</h1>
+      <h1 class="title">Generating Custom Reports from R Shiny Applications and R scripts</h1>
                   <div>
         <div class="description">
-          Displaying interactive and static charts in different quarto report formats: .html, .pdf, and docx (word document)
+          Learn how to add custom report generation functionalities within R Shiny applications and how to write R scripts that generate custom reports using rmarkdown
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">data visualisation</div>
-                <div class="quarto-category">data analysis</div>
                 <div class="quarto-category">r</div>
-                <div class="quarto-category">quarto</div>
+                <div class="quarto-category">shiny</div>
                 <div class="quarto-category">code</div>
+                <div class="quarto-category">automation</div>
+                <div class="quarto-category">rmarkdown</div>
               </div>
                   </div>
   </div>
@@ -205,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 17, 2024</p>
+        <p class="date">July 14, 2024</p>
       </div>
     </div>
     
@@ -221,12 +221,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#package-use-case-and-installation" id="toc-package-use-case-and-installation" class="nav-link active" data-scroll-target="#package-use-case-and-installation"><span class="header-section-number">0.1</span> Package Use-case and Installation</a></li>
-  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">0.2</span> Dataset</a></li>
-  <li><a href="#sec-pdf-quarto-report" id="toc-sec-pdf-quarto-report" class="nav-link" data-scroll-target="#sec-pdf-quarto-report"><span class="header-section-number">0.3</span> .pdf Quarto Report</a></li>
-  <li><a href="#docx-quarto-report" id="toc-docx-quarto-report" class="nav-link" data-scroll-target="#docx-quarto-report"><span class="header-section-number">0.4</span> .docx Quarto Report</a></li>
-  <li><a href="#html-quarto-report" id="toc-html-quarto-report" class="nav-link" data-scroll-target="#html-quarto-report"><span class="header-section-number">0.5</span> .html Quarto Report</a></li>
-  <li><a href="#sejda-.html-to-pdf" id="toc-sejda-.html-to-pdf" class="nav-link" data-scroll-target="#sejda-.html-to-pdf"><span class="header-section-number">0.6</span> Sejda .html to PDF</a></li>
+  <li><a href="#parameterised-rmarkdown" id="toc-parameterised-rmarkdown" class="nav-link active" data-scroll-target="#parameterised-rmarkdown">Parameterised Rmarkdown</a></li>
+  <li><a href="#generate-report-from-r-shiny" id="toc-generate-report-from-r-shiny" class="nav-link" data-scroll-target="#generate-report-from-r-shiny">Generate Report from R shiny</a></li>
   </ul>
 </nav>
     </div>
@@ -237,215 +233,130 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>Generating reports with Highcharter charts in R can pose challenges when the output format needs to be in .pdf or .docx. However, there’s a straightforward workaround available. You can download the chart and then paste it into either a PowerPoint or Word document. If needed, you can convert the document to a .pdf format afterward.</p>
-<p>To enable downloading options, you can use the <code>hc_exporting(...)</code> function:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>highcharter_chart_object <span class="sc">|&gt;</span> </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_exporting</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>highcharter_chart_object</code> represents a highcharter chart.</p>
-<p>Download options provided by enabling exporting:</p>
-<p><img src="download-options.png" class="img-fluid"></p>
-<p>In this post, we will explore another workaround using the <a href="https://rstudio.github.io/webshot2/">webshot2</a> and <a href="https://www.htmlwidgets.org/">htmlwidgets</a> packages. This method enables you to work exclusively within R without the need to download or take screenshots of charts for pasting into other documents.</p>
+<p>Sometimes, you may need to develop dashboards with limited access or dashboards focused on tracking specific KPIs without providing too much detail. With R Shiny, you can create dashboards that allow users to filter the data they want to see and generate detailed reports or reports tailored for different stakeholders who don’t require access to the full dashboard. Alternatively, you might need an R script integrated into your workflow to automate report generation. In this blog post, we will explore how to create reports from R Shiny filters and R scripts.</p>
+<p>In this post, we will primarily explore creating custom HTML reports using an RMarkdown file (.Rmd). Alternatively, you can follow this process using Quarto (.qmd), with output formats of your choosing, such as .docx or .pdf.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Example dataset
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To learn more about the YAML Quarto code chunk options used in this post, you can refer to the <a href="https://r4ds.hadley.nz/quarto#chunk-options">Quarto Chuck Options</a> section in the <a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a> online book.</p>
+<p>We will use the patient admission data from the previous post as an example data set for this post.</p>
 </div>
 </div>
-<section id="package-use-case-and-installation" class="level3" data-number="0.1">
-<h3 data-number="0.1" class="anchored" data-anchor-id="package-use-case-and-installation"><span class="header-section-number">0.1</span> Package Use-case and Installation</h3>
-<p><strong>Tidyverse</strong> will be used for data manipulation</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Highcharter</strong> will be used to create an interactive chart</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"highcharter"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Htmlwidgets</strong> will used to save the interactive chart to an .html file</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"htmlwidgets"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Webshot2</strong> will be used to take a screenshot of the saved interactive chart (.html file). The screenshot can be saved as an .png, .jpeg, or .pdf.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"webshot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="dataset" class="level3" data-number="0.2">
-<h3 data-number="0.2" class="anchored" data-anchor-id="dataset"><span class="header-section-number">0.2</span> Dataset</h3>
-<p>The line chart generated using Highcharter, showcased in the reports within the subsequent sections, provides insights derived from the vaccines dataset.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Expand To Learn More About the vaccines Dataset
+Libraries
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>vaccines</strong> is a highcharter dataset that contains the number of infected people by Measles, measured over 70-some years and across all 50 states. From the WSJ analysis: <a href="http://graphics.wsj.com/infectious-diseases-and-vaccines/" class="uri">http://graphics.wsj.com/infectious-diseases-and-vaccines/</a></p>
-<p><strong>Format</strong> - A data frame with 3,876 observations and 3 variables.</p>
 <ul>
-<li><code>year</code>- year</li>
-<li><code>state</code> - name of the state</li>
-<li><code>count</code> - number of cases per 100,000 people. If the value is NA the count was 0</li>
+<li><p><a href="https://dreamrs.github.io/shinyWidgets">shinyWidgets</a> for the interactive filters and download buttons in the R shiny application</p></li>
+<li><p><a href="https://rmarkdown.rstudio.com/">rmarkdown</a> for generating the reports.</p></li>
 </ul>
-<p><strong>View vaccines dataset</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(highcharter)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>vaccines</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,876 × 3
-    year state                count
-   &lt;int&gt; &lt;chr&gt;                &lt;dbl&gt;
- 1  1928 Alabama              335. 
- 2  1928 Alaska                NA  
- 3  1928 Arizona              201. 
- 4  1928 Arkansas             482. 
- 5  1928 California            69.2
- 6  1928 Colorado             207. 
- 7  1928 Connecticut          635. 
- 8  1928 Delaware             256. 
- 9  1928 District Of Columbia 536. 
-10  1928 Florida              120. 
-# ℹ 3,866 more rows</code></pre>
 </div>
 </div>
-</div>
-</div>
-</div>
+<section id="parameterised-rmarkdown" class="level3">
+<h3 class="anchored" data-anchor-id="parameterised-rmarkdown">Parameterised Rmarkdown</h3>
+<p>When creating an R Shiny application or R script for custom report generation, I usually start by creating a parameterized RMarkdown file. A parameterized report allows you to customize the content dynamically based on input parameters, such as date ranges, filters, or specific variables. This flexibility enables the creation of tailored reports for different users or scenarios, ensuring that each report provides relevant and specific insights.</p>
+<section id="creating-a-parameterised-rmarkdown-file" class="level4">
+<h4 class="anchored" data-anchor-id="creating-a-parameterised-rmarkdown-file">Creating a parameterised Rmarkdown file</h4>
+<p>This paramterised .rmd file accepts two parameters admission_date and hospital.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  ![](logo.jpg){width=2.2in}  </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  Patient Admission Report</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Eli-tech Blog Solutions"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"`r Sys.Date()`"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html_document</span><span class="kw">:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> flatly</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">params</span><span class="kw">:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">admission_date</span><span class="kw">:</span><span class="at"> !r c(format(Sys.Date(), "%Y-01-01"), as.character(Sys.Date()))</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">hospital</span><span class="kw">:</span><span class="at"> !r c("Eltech Medical Center", "Bayestry Hospital", "Anival Health Clinic")</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="sec-pdf-quarto-report" class="level3" data-number="0.3">
-<h3 data-number="0.3" class="anchored" data-anchor-id="sec-pdf-quarto-report"><span class="header-section-number">0.3</span> .pdf Quarto Report</h3>
-<p>The following code produces a .pdf report, accomplished by setting the output format to PDF using <code>format: pdf</code>. The <code>delay</code> argument specifies the time to wait before taking a screenshot, in seconds. It is advisable to set a longer delay to ensure all assets display properly.</p>
+<section id="filtering-data-based-on-parameters" class="level4">
+<h4 class="anchored" data-anchor-id="filtering-data-based-on-parameters">Filtering data based on parameters</h4>
+<p>In our case we will be filtering the data based on the input parameters. If no parameter is given from the R shiny application or r script. The default specified parameters will be used. To check if the parameters are returning the given values. The following can executed on the .rmd file or console <code>params$admission_date</code> and <code>params$hospital</code></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rmarkdown code chuck (```{r}...```{r})</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Read patient data and filter admission date and hospital </span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>patient_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"patient_data.csv"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(admission_date <span class="sc">&gt;=</span> params<span class="sc">$</span>admission_date[<span class="dv">1</span>] <span class="sc">&amp;</span> </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>           admission_date <span class="sc">&lt;=</span> params<span class="sc">$</span>admission_date[<span class="dv">2</span>] <span class="sc">&amp;</span> </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>           hospital <span class="sc">%in%</span> params<span class="sc">$</span>hospital)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The code that comes after the above chunk can be your report code that does something with the data or presents certain results. For the complete report refer to this <a href="https://github.com/Ellie190/e-tech-blog-materials/blob/main/3_report_generation_in_rshiny/rmarkdown_html_report.Rmd">GitHub</a></p>
+</section>
+</section>
+<section id="generate-report-from-r-shiny" class="level3">
+<h3 class="anchored" data-anchor-id="generate-report-from-r-shiny">Generate Report from R shiny</h3>
+<section id="r-shiny-filters" class="level4">
+<h4 class="anchored" data-anchor-id="r-shiny-filters">R shiny filters</h4>
+<p>These are the r shiny dashboard filters that will be used to generate values for the params in the .Rmd file</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hospital filter</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pickerInput</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">"hospital"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">"Select hospital(s):"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"Eltech Medical Center"</span>, <span class="st">"Bayestry Hospital"</span>, <span class="st">"Anival Health Clinic"</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">multiple =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">selected =</span> <span class="fu">c</span>(<span class="st">"Eltech Medical Center"</span>, <span class="st">"Bayestry Hospital"</span>, <span class="st">"Anival Health Clinic"</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">options =</span> <span class="fu">pickerOptions</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">actionsBox =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">5</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">liveSearch =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">selectedTextFormat =</span> <span class="st">"count &gt; 1"</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Date filter</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">airDatepickerInput</span>(</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">inputId =</span> <span class="st">"admission_date"</span>,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">"Select admission date range:"</span>,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">c</span>(<span class="st">"2024-01-01"</span>, <span class="st">"2024-07-12"</span>),</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">range =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">separator =</span> <span class="st">" - "</span>,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">minDate =</span> <span class="st">"2024-01-01"</span>,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">maxDate =</span> <span class="st">"2024-07-12"</span>,</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">dateFormat =</span> <span class="st">"yyyy-MM-dd"</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="r-shiny-download-buttons" class="level4">
+<h4 class="anchored" data-anchor-id="r-shiny-download-buttons">R shiny download buttons</h4>
+<p>This download buttons will be used to trigger the report generation and download</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">downloadBttn</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">outputId =</span> <span class="st">"patient_admission_report_download"</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">"Download Report"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">"unite"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="st">"sm"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">downloadBttn</span>(</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">outputId =</span> <span class="st">"patient_admission_bulk_report_download"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">label =</span> <span class="st">"Download Multiple Reports"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">style =</span> <span class="st">"unite"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="st">"sm"</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+GitHub
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To generate a PDF format report, a <strong>LaTeX</strong> installation is necessary. To ensure smooth output of a .pdf report, please install TinyTeX by executing the following command in your Terminal:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Terminal</strong></pre>
-</div>
-<div class="sourceCode" id="cb8" data-filename="Terminal"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install tinytex</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The code for patient data, dashboard, and report generation can be accessed on <a href="https://github.com/Ellie190/e-tech-blog-materials/tree/main/3_report_generation_in_rshiny">GitHub</a></p>
 </div>
 </div>
-</div>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R Studio Code Screenshot</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Measles Infected Cases"</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"E-tech Blog"</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2024-02-17"</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> pdf</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(highcharter)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(webshot2)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmlwidgets)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>measles_infected_cases <span class="ot">&lt;-</span> vaccines <span class="sc">|&gt;</span> </span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Florida"</span>, <span class="st">"California"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">count =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(count), <span class="dv">0</span>, count)) <span class="sc">|&gt;</span> </span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hchart</span>(<span class="st">"line"</span>, <span class="fu">hcaes</span>(<span class="at">x =</span> year, <span class="at">y =</span> count, <span class="at">group =</span> state)) <span class="sc">|&gt;</span> </span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_xAxis</span>(<span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">"Year"</span>)) <span class="sc">|&gt;</span>  </span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_yAxis</span>(<span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">"Number of cases per 100k people"</span>)) <span class="sc">|&gt;</span>  </span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_title</span>(<span class="at">text =</span> <span class="fu">list</span>(<span class="st">"Measles Infected Cases per 100k People </span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="st">                       in Florida &amp; California"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_colors</span>(<span class="fu">c</span>(<span class="st">"#dc3545"</span>, <span class="st">"#5c6f7e"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_exporting</span>(<span class="at">enabled =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_theme</span>(<span class="fu">hc_theme</span>(<span class="at">chart =</span> <span class="fu">list</span>(<span class="at">backgroundColor =</span> <span class="st">"white"</span>)))</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="fu">saveWidget</span>(<span class="at">widget =</span> measles_infected_cases,</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">file =</span> <span class="st">"measles_infected_cases_chart.html"</span>)</span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="fu">webshot</span>(<span class="at">url =</span> <span class="st">"measles_infected_cases_chart.html"</span>,</span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">file =</span> <span class="st">"measles_infector_cases_chart.jpeg"</span>,</span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">delay =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><img src="rstudio-pdf-report-code-snippet.png" class="img-fluid"></p>
-</div>
-</div>
-</div>
-<p><strong>The above code produces the following report:</strong></p>
-<p><img src="pdf_report.png" class="img-fluid"></p>
-</section>
-<section id="docx-quarto-report" class="level3" data-number="0.4">
-<h3 data-number="0.4" class="anchored" data-anchor-id="docx-quarto-report"><span class="header-section-number">0.4</span> .docx Quarto Report</h3>
-<p>The .docx Quarto report can be produced by replacing <code>format: pdf</code> with <code>format: docx</code> in the code provided in <a href="#sec-pdf-quarto-report" class="quarto-xref">Section&nbsp;0.3</a>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Viewing Word documents necessitates the installation of MS Word (or Libre/Open Office on Linux).</p>
-</div>
-</div>
-<p><strong>The .docx format will produce the following report:</strong></p>
-<p><img src="docx_report.png" class="img-fluid"></p>
-</section>
-<section id="html-quarto-report" class="level3" data-number="0.5">
-<h3 data-number="0.5" class="anchored" data-anchor-id="html-quarto-report"><span class="header-section-number">0.5</span> .html Quarto Report</h3>
-<p>The following code produces an .html report. This is achieved by setting the output format to HTML using <code>format: html</code>.</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">R Studio Code Screenshot</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Measles Infected Cases"</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"E-tech Blog"</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"2024-02-17"</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(highcharter)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>measles_infected_cases <span class="ot">&lt;-</span> vaccines <span class="sc">|&gt;</span> </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(state <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Florida"</span>, <span class="st">"California"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">count =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(count), <span class="dv">0</span>, count)) <span class="sc">|&gt;</span> </span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hchart</span>(<span class="st">"line"</span>, <span class="fu">hcaes</span>(<span class="at">x =</span> year, <span class="at">y =</span> count, <span class="at">group =</span> state)) <span class="sc">|&gt;</span> </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_xAxis</span>(<span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">"Year"</span>)) <span class="sc">|&gt;</span>  </span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_yAxis</span>(<span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">"Number of cases per 100k people"</span>)) <span class="sc">|&gt;</span>  </span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_title</span>(<span class="at">text =</span> <span class="fu">list</span>(<span class="st">"Measles Infected Cases per 100k People </span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="st">                       in Florida &amp; California"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_colors</span>(<span class="fu">c</span>(<span class="st">"#dc3545"</span>, <span class="st">"#5c6f7e"</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_exporting</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_theme</span>(<span class="fu">hc_theme</span>(<span class="at">chart =</span> <span class="fu">list</span>(<span class="at">backgroundColor =</span> <span class="st">"white"</span>)))</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>measles_infected_cases</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p><img src="rstudio-html-report-code-snippet.png" class="img-fluid"></p>
-</div>
-</div>
-</div>
-<p><strong>The above code produces the following report:</strong></p>
-<p><img src="html_report.png" class="img-fluid"></p>
-</section>
-<section id="sejda-.html-to-pdf" class="level3" data-number="0.6">
-<h3 data-number="0.6" class="anchored" data-anchor-id="sejda-.html-to-pdf"><span class="header-section-number">0.6</span> Sejda .html to PDF</h3>
-<p>Alternatively, the <a href="https://www.sejda.com/html-to-pdf">Sejda HTML to PDF</a> converter can be used to quickly convert a .html format report to a .pdf report.</p>
-<p><img src="sedja-html-to-pdf-converter.png" class="img-fluid"></p>
 <div class="callout callout-style-simple callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -461,6 +372,7 @@ Thank you for following along
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -643,7 +555,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -675,29 +598,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/elitechblog\.com\/");
@@ -705,7 +606,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

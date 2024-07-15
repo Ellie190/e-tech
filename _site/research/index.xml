@@ -6,16 +6,21 @@
       version="2.0">
 <channel>
 <title>E-tech Blog</title>
-<link>https://e-tech-blog.netlify.app/research/index.html</link>
-<atom:link href="https://e-tech-blog.netlify.app/research/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://elitechblog.com/research/</link>
+<atom:link href="https://elitechblog.com/research/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
-<generator>quarto-1.3.450</generator>
+<image>
+<url>https://elitechblog.com/preview.jpg</url>
+<title>E-tech Blog</title>
+<link>https://elitechblog.com/research/</link>
+</image>
+<generator>quarto-1.4.555</generator>
 <lastBuildDate>Wed, 29 Nov 2023 22:00:00 GMT</lastBuildDate>
 <item>
   <title>Web-based Clustering Application for Determining and Understanding Student Engagement Levels in Virtual Learning Environments</title>
   <dc:creator>Eli Nimy</dc:creator>
   <dc:creator>Moeketsi Mosia</dc:creator>
-  <link>https://e-tech-blog.netlify.app/research/2023-11-30-web-based-clustering-application/index.html</link>
+  <link>https://elitechblog.com/research/2023-11-30-web-based-clustering-application/</link>
   <description><![CDATA[ 
 
 
@@ -35,17 +40,18 @@
   <category>Virtual Learning Environments</category>
   <category>Student Engagement</category>
   <category>Clustering</category>
-  <guid>https://e-tech-blog.netlify.app/research/2023-11-30-web-based-clustering-application/index.html</guid>
+  <guid>https://elitechblog.com/research/2023-11-30-web-based-clustering-application/</guid>
   <pubDate>Wed, 29 Nov 2023 22:00:00 GMT</pubDate>
-  <media:content url="https://e-tech-blog.netlify.app/research/2023-11-30-web-based-clustering-application/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://elitechblog.com/research/2023-11-30-web-based-clustering-application/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Identifying At-Risk Students for Early Intervention—A Probabilistic Machine Learning Approach</title>
   <dc:creator>Eli Nimy</dc:creator>
   <dc:creator>Moeketsi Mosia</dc:creator>
   <dc:creator>Colin Chibaya</dc:creator>
-  <link>https://e-tech-blog.netlify.app/research/2023-03-18-identifying-at-risk-students/index.html</link>
+  <link>https://elitechblog.com/research/2023-03-18-identifying-at-risk-students/</link>
   <description><![CDATA[ 
+
 
 
 
@@ -66,9 +72,9 @@
   <category>Predictive Analytics</category>
   <category>At-risk Students</category>
   <category>Early Intervention</category>
-  <guid>https://e-tech-blog.netlify.app/research/2023-03-18-identifying-at-risk-students/index.html</guid>
+  <guid>https://elitechblog.com/research/2023-03-18-identifying-at-risk-students/</guid>
   <pubDate>Fri, 17 Mar 2023 22:00:00 GMT</pubDate>
-  <media:content url="https://e-tech-blog.netlify.app/research/2023-03-18-identifying-at-risk-students/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://elitechblog.com/research/2023-03-18-identifying-at-risk-students/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Showcasing White-Box Implementation of the RSA Digital Signature Scheme</title>
@@ -76,7 +82,7 @@
   <dc:creator>Mfundo Monchwe</dc:creator>
   <dc:creator>Taryn Nicole Michael</dc:creator>
   <dc:creator>Eli Bila Nimy</dc:creator>
-  <link>https://e-tech-blog.netlify.app/research/2022-10-18-rsa-digital-signature/index.html</link>
+  <link>https://elitechblog.com/research/2022-10-18-rsa-digital-signature/</link>
   <description><![CDATA[ 
 
 
@@ -96,9 +102,9 @@
   <category>Digital Signature Scheme</category>
   <category>Private Key</category>
   <category>Public Key</category>
-  <guid>https://e-tech-blog.netlify.app/research/2022-10-18-rsa-digital-signature/index.html</guid>
+  <guid>https://elitechblog.com/research/2022-10-18-rsa-digital-signature/</guid>
   <pubDate>Mon, 17 Oct 2022 22:00:00 GMT</pubDate>
-  <media:content url="https://e-tech-blog.netlify.app/research/2022-10-18-rsa-digital-signature/preview.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://elitechblog.com/research/2022-10-18-rsa-digital-signature/preview.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
