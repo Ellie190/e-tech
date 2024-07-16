@@ -264,6 +264,17 @@ The report is generated based on the hospital and admission date filters from th
 The code for patient data, dashboard, and report generation can be accessed on [GitHub](https://github.com/Ellie190/e-tech-blog-materials/tree/main/3_report_generation_in_rshiny)
 :::
 
+
+### How patient admission data can transform hospitals
+Patient admission data can be a goldmine for hospitals looking to improve efficiency and patient care. Some ways in which the data can be used:
+
+**Resource allocation:** By understanding things like the most common diagnoses, admission rates, and peak admission times, hospitals can allocate staff, beds, and equipment more effectively. Imagine knowing Tuesdays at 10 am are busiest for admissions, so you have extra staff scheduled then.
+
+**Patient care:** Knowing how long patients typically stay helps hospitals plan discharges and avoid overcrowding. Additionally, tracking readmission rates can help identify areas where care can be improved.
+
+**Insights at a glance:** Dashboards and reports that summarize this data allow staff to quickly see trends and patterns. This can help with things like staffing decisions, budgeting, and identifying areas for improvement in patient care.
+
+
 ::: {.callout-note appearance="simple"}
 ## Thank you for following along
 
