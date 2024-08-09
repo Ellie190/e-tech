@@ -15,7 +15,37 @@
 <link>https://elitechblog.com/research/</link>
 </image>
 <generator>quarto-1.4.555</generator>
-<lastBuildDate>Wed, 29 Nov 2023 22:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 29 Jul 2024 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Modelling Student Retention in Tutorial Classes with Uncertainty—A Bayesian Approach to Predicting Attendance-Based Retention</title>
+  <dc:creator>Eli Nimy</dc:creator>
+  <dc:creator>Moeketsi Mosia</dc:creator>
+  <link>https://elitechblog.com/research/2024-07-30-modeling-student-retention-in-tutorship-support/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="abstract" class="level3">
+<h3 class="anchored" data-anchor-id="abstract">Abstract</h3>
+<p>A Bayesian additive regression tree (BART) is a recent statistical method that blends ensemble learning with nonparametric regression. BART is constructed using a Bayesian approach, which provides the benefit of model-based prediction uncertainty, enhancing the reliability of predictions. This study proposes the development of a BART model with a binomial likelihood to predict the percentage of students retained in tutorial classes using attendance data sourced from a South African university database. The data consist of tutorial dates and encoded (anonymized) student numbers, which play a crucial role in deriving retention variables such as cohort age, active students, and retention rates. The proposed model is evaluated and benchmarked against the random forest regressor (RFR). The proposed BART model reported an average of 20% higher predictive performance compared to RFR across six error metrics, achieving an R-squared score of 0.9414. Furthermore, the study demonstrates the utility of the highest density interval (HDI) provided by the BART model, which can help in determining the best- and worst-case scenarios for student retention rate estimates. The significance of this study extends to multiple stakeholders within the educational sector. Educational institutions, administrators, and policymakers can benefit from this study by gaining insights into how future tutorship programme student retention rates can be predicted using predictive models. Furthermore, the foresight provided by the predicted student retention rates can aid in strategic resource allocation, facilitating more informed planning and budgeting for tutorship programmes.</p>
+</section>
+<section id="article-link" class="level3">
+<h3 class="anchored" data-anchor-id="article-link">Article Link</h3>
+<p><a href="https://doi.org/10.3390/educsci14080830">MDPI Education Sciences Journal</a></p>
+
+
+</section>
+
+ ]]></description>
+  <category>ayesian approach</category>
+  <category>tutorship programme</category>
+  <category>education data analytics</category>
+  <category>ensemble</category>
+  <guid>https://elitechblog.com/research/2024-07-30-modeling-student-retention-in-tutorship-support/</guid>
+  <pubDate>Mon, 29 Jul 2024 22:00:00 GMT</pubDate>
+  <media:content url="https://elitechblog.com/research/2024-07-30-modeling-student-retention-in-tutorship-support/preview.jpeg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Web-based Clustering Application for Determining and Understanding Student Engagement Levels in Virtual Learning Environments</title>
   <dc:creator>Eli Nimy</dc:creator>
